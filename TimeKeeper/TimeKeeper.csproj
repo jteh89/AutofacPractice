@@ -96,6 +96,7 @@
     <Folder Include="Services\" />
     <Folder Include="ConsoleWriting\" />
     <Folder Include="DateWriting\" />
+    <Folder Include="DateRetrieval\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -118,6 +119,8 @@
     <Compile Include="ConsoleWriting\IOutput.cs" />
     <Compile Include="DateWriting\IDateWriter.cs" />
     <Compile Include="DateWriting\TodayWriter.cs" />
+    <Compile Include="DateRetrieval\IDateRetreiver.cs" />
+    <Compile Include="DateRetrieval\TodayDateRetriever.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

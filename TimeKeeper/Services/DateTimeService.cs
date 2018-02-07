@@ -5,7 +5,7 @@ namespace TimeKeeper.Services
 {
     public static class DateTimeService
     {
-        public static DateTime getCurrentTime() {
+        public static DateTime GetCurrentTime() {
             return DateTime.Now;
         }
     }

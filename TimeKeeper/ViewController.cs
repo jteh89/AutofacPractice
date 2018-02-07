@@ -3,8 +3,9 @@
 using UIKit;
 using Autofac;
 
-using TimeKeeper.DateWriting;
-using TimeKeeper.Services;
+// using TimeKeeper.DateWriting;
+// using TimeKeeper.Services;
+using TimeKeeper.DateRetrieval;
 
 namespace TimeKeeper
 {
@@ -20,12 +21,13 @@ namespace TimeKeeper
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
 
-            TimeLabel.Text = DateTimeService.GetCurrentTime().ToShortTimeString();
-
             using (ILifetimeScope scope = Application.Container.BeginLifetimeScope())
             {
-                IDateWriter writer = scope.Resolve<IDateWriter>();
-                writer.WriteDate();
+                // IDateWriter writer = scope.Resolve<IDateWriter>();
+                // writer.WriteDate();
+
+                IDateRetreiver dateRetriever = scope.Resolve<IDateRetreiver>();
+                TimeLabel.Text = dateRetriever.RetrieveDate().ToShortTimeString();
             }
         }
 
